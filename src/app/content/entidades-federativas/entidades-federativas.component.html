@@ -1,1 +1,46 @@
-<p>entidades-federativas works!</p>
+<!-- <div> -->
+<form>
+    <h1>Entidades Federativas</h1>
+    <p>En este sitio puedes consultar las entidades federativas comenzando de la entidad principal</p>
+    
+        <!-- <mat-form-field >
+            <mat-label>Selecciona Entidad Federativa</mat-label>
+            <mat-select [(ngModel)]="entFedSelected" name="EntidadFederativ">
+                @for (entfed of entFed; track entfed){
+                    <mat-option [value]="entfed.nameEstado">{{entfed.nameEstado}}</mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+        <p>Entidad Seleccionada: {{entFedSelected}}</p>
+
+        <mat-form-field>
+            <mat-label>Selecciona un municipio</mat-label>
+            <mat-select [(ngModel)]="municipioSelected" name="Municipio">
+              @for (munic of municipio; track munic) {
+                <mat-option [value]="munic.nameMunicipio">{{munic.nameMunicipio}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+          <p> Municipio seleccionado: {{municipioSelected}} </p> -->
+
+          <mat-form-field >
+            <mat-label>Selecciona Entidad Federativa</mat-label>
+            <mat-select [(ngModel)]="entFedSelected" (selectionChange)="filtrarMunicipio()" name="EntidadFederativ">
+                @for (entfed of entFed; track entfed){
+                    <mat-option [value]="entfed">{{entfed.nameEstado}}</mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+        <p>Entidad Seleccionada: {{entFedSelected.nameEstado}}</p>
+
+        <mat-form-field>
+            <mat-label>Selecciona un municipio</mat-label>
+            <mat-select [(ngModel)]="municipioSelected" name="Municipio">
+              @for (munic of resultMunicipio; track munic) {
+                <mat-option [value]="munic">{{munic.nameMunicipio}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+          <p> Municipio seleccionado: {{municipioSelected.nameMunicipio}} </p>
+</form>
+<!-- </div> -->
