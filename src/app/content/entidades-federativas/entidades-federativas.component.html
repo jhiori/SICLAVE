@@ -19,7 +19,7 @@
               @for (munic of municipio; track munic) {
                 <mat-option [value]="munic.nameMunicipio">{{munic.nameMunicipio}}</mat-option>
               }
-            </mat-select>
+            </mat-select>ng build --output-path=docs --base-href=/SICLAVE/
           </mat-form-field>
           <p> Municipio seleccionado: {{municipioSelected}} </p> -->
 
@@ -35,12 +35,22 @@
 
         <mat-form-field>
             <mat-label>Selecciona un municipio</mat-label>
-            <mat-select [(ngModel)]="municipioSelected" name="Municipio">
+            <mat-select [(ngModel)]="municipioSelected" (selectionChange)="filtrarLocalidad()" name="Municipio">
               @for (munic of resultMunicipio; track munic) {
                 <mat-option [value]="munic">{{munic.nameMunicipio}}</mat-option>
               }
             </mat-select>
           </mat-form-field>
           <p> Municipio seleccionado: {{municipioSelected.nameMunicipio}} </p>
+
+        <mat-form-field>
+        <mat-label>Selecciona una localidad</mat-label>
+        <mat-select [(ngModel)]="localidadSelected" name="Localidad">
+            @for (loc of resultLocalidad; track loc) {
+            <mat-option [value]="loc">{{loc.nameLocalidad}}</mat-option>
+            }
+        </mat-select>
+        </mat-form-field>
+        <p> Localidad seleccionada: {{localidadSelected.nameLocalidad}} </p>
 </form>
 <!-- </div> -->
