@@ -42,8 +42,10 @@ export class EntidadesFederativasComponent implements OnInit {
   filtrarMunicipio(){
     // this.municipio = this.municipio.filter(x => x.cveEstado == this.entFedSelected)
     // alert()
+    this.municipioSelected = {};
     this.resultMunicipio = this.municipio.filter(x => x.cveEstado == this.entFedSelected.cveEstado)
-    
+    this.localidadSelected = {};
+  
   }
 
   filtrarLocalidad(){
