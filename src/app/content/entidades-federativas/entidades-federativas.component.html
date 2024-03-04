@@ -23,34 +23,35 @@
           </mat-form-field>
           <p> Municipio seleccionado: {{municipioSelected}} </p> -->
 
-          <mat-form-field >
-            <mat-label>Selecciona Entidad Federativa</mat-label>
-            <mat-select [(ngModel)]="entFedSelected" (selectionChange)="filtrarMunicipio()" name="EntidadFederativ">
-                @for (entfed of entFed; track entfed){
-                    <mat-option [value]="entfed">{{entfed.nameEstado}}</mat-option>
-                }
-            </mat-select>
+        <mat-form-field >
+          <mat-label>Selecciona Entidad Federativa</mat-label>
+          <mat-select [(ngModel)]="entFedSelected" (selectionChange)="filtrarMunicipio()" name="EntidadFederativ">
+              @for (entfed of entFed; track entfed){
+                  <mat-option [value]="entfed">{{entfed.nameEstado}}</mat-option>
+              }
+          </mat-select>
         </mat-form-field>
         <p>Entidad Seleccionada: {{entFedSelected.nameEstado}}</p>
-
+               
         <mat-form-field>
-            <mat-label>Selecciona un municipio</mat-label>
-            <mat-select [(ngModel)]="municipioSelected" (selectionChange)="filtrarLocalidad()" name="Municipio">
-              @for (munic of resultMunicipio; track munic) {
-                <mat-option [value]="munic">{{munic.nameMunicipio}}</mat-option>
-              }
-            </mat-select>
-          </mat-form-field>
-          <p> Municipio seleccionado: {{municipioSelected.nameMunicipio}} </p>
-
-        <mat-form-field>
-        <mat-label>Selecciona una localidad</mat-label>
-        <mat-select [(ngModel)]="localidadSelected" name="Localidad">
-            @for (loc of resultLocalidad; track loc) {
-            <mat-option [value]="loc">{{loc.nameLocalidad}}</mat-option>
+          <mat-label>Selecciona un municipio</mat-label>
+          <mat-select [(ngModel)]="municipioSelected" (selectionChange)="filtrarLocalidad()" name="Municipio">
+            @for (munic of resultMunicipio; track munic) {
+              <mat-option [value]="munic">{{munic.nameMunicipio}}</mat-option>
             }
-        </mat-select>
+          </mat-select>
         </mat-form-field>
-        <p> Localidad seleccionada: {{localidadSelected.nameLocalidad}} </p>
+        <p> Municipio seleccionado: {{municipioSelected.nameMunicipio}} </p>
+
+        <mat-form-field>
+          <mat-label>Selecciona una Localidad</mat-label>
+          <mat-select [(ngModel)]="localidadSelected"  name="Localidad">
+              @for (loc of resultLocalidad; track loc) {
+              <mat-option [value]="loc">{{loc.nameLocalidad}}</mat-option>
+              }
+          </mat-select>
+          </mat-form-field>
+          <p> Localidad seleccionada: {{localidadSelected.nameLocalidad}} </p>
+
 </form>
 <!-- </div> -->
