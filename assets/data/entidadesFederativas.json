@@ -2,7 +2,7 @@
 {
     "entidadesFederativas" : [
       {"cveEstado" : "AGU", "nameEstado" : "Aguascalientes"},
-      {"cveEstado" : "CDMX", "nameEstado" : "CDMX"}  
+      {"cveEstado" : "CMX", "nameEstado" : "CDMX"}  
     ]
 }
 
