@@ -7,6 +7,10 @@
         <li><a href="#">Tramites</a></li>
         <li><a href="#">Gobierno</a></li>
         <li><a href="#">|</a></li>
-        <li><a href="#">Ingresar</a></li>
+        <!-- <li><a href="#" *ngIf="!authService.session" (click)="openDialog()">Ingresar</a></li> -->
+        <button *ngIf="!authService.session" mat-stroked-button color="primary" (click)="openDialog()">Ingresar</button>
+        <li><a href="#" *ngIf="authService.session" (click)="login()">Bienvenido: {{authService.session.name}}</a></li>
+        <button *ngIf="authService.session" mat-stroked-button color="warning" (click)="authService.session = undefined">Salir</button>
+        <!-- <li><a href="#" *ngIf="authService.session" (click)="authService.session = undefined">Salir</a></li> -->
     </ul>
 </nav>

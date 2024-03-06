@@ -1,1 +1,28 @@
-<p>keys works!</p>
+<!-- <p>keys works!</p> -->
+<h2 mat-dialog-title>Sistema &#218;nico de Autenticaci&#243;n</h2>
+<mat-dialog-content>Ingresa tus credenciales</mat-dialog-content>
+<form>
+    <mat-form-field appearance="outline">
+        <mat-label>Usuario</mat-label>
+        <input matInput [formControl]="userFormControl" placeholder="Ejemplo@hacienda.gob.mx">
+        @if (userFormControl.hasError('email') && !userFormControl.hasError('required')){
+            <mat-error>Por favor ingresa nombre de usuario valido</mat-error>
+        }
+        @if (userFormControl.hasError('required')){
+            <mat-error>Nombre de usuario <strong>requerido</strong></mat-error>
+        }
+
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" [formControl]="passFormControl">        
+        @if (passFormControl.hasError('required')){
+            <mat-error>Ingrese su<strong>contraseña</strong></mat-error>
+        }
+
+    </mat-form-field>
+</form>
+<mat-dialog-actions align="center">
+    <button mat-button mat-dialog-close="{test: 'cancel', user: ''}">Cerrar</button>
+    <button mat-button [mat-dialog-close] ="{test: 'envio', user: 'pc-Y-50'}" [disabled]="!userFormControl.valid || !passFormControl.valid" >Ingresar</button>
+</mat-dialog-actions>
