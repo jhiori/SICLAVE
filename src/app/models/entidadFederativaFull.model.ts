@@ -10,6 +10,11 @@ export class EntidadFederativa{
     }
 }
 
+export interface EntidadFederativa_F<T>{
+    entidadFederativa: T[];
+    municipio: T[];
+    localidad: T[];
+}
 
 export class Municipio{
     constructor(
