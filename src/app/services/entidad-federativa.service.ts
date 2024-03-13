@@ -16,7 +16,7 @@ export class EntidadFederativaService {
     //this.getEntidadesFederativas()
   }
 
-  urlLocalData: string = '/assets/data/entidadesFederativas.json'
+  urlLocalData: string = './assets/data/entidadesFederativas.json'
 
   // private EntidadFederativa[]: EntidadFederativa = new Array<EntidadFederativa>();
 
